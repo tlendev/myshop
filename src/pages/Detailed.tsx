@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 
 type Props = {};
 
-const Item = (props: Props) => {
+const Detailed = (props: Props) => {
     const { id } = useParams();
     const navigate = useNavigate();
 
@@ -21,4 +21,4 @@ const Item = (props: Props) => {
     );
 };
 
-export { Item };
+export { Detailed };

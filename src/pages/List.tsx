@@ -1,23 +1,16 @@
-import { Link } from 'react-router-dom';
+import { ItemList } from '../components/list/ItemList';
+import { useAppDispatch, useAppSelector } from '../redux/hooks';
 
 type Props = {};
 
 const List = (props: Props) => {
+    const cartItems = useAppSelector((state) => state.cart.cartItems);
     return (
         <>
+            <br />
+            <br />
             <p>List</p>
-            <Link to={'/item/1'}>
-                <p>to item 1</p>
-            </Link>
-            <Link to={'/item/12'}>
-                <p>to item 12</p>
-            </Link>
-            <Link to={'/item/-1'}>
-                <p>to item -1</p>
-            </Link>
-            <Link to={'/item/999'}>
-                <p>to item out of range</p>
-            </Link>
+            <ItemList items={cartItems} />
         </>
     );
 };
