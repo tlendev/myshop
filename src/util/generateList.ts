@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import { DetailedItem } from '../types';
 
 /**
@@ -9,8 +10,8 @@ export const generateMock = (quantity: number) => {
     const mockItems: Array<DetailedItem> = [];
     for (let i = 0; i < quantity; i++) {
         const item = {
-            uid: i.toString(),
-            name: `A BMW ${i}`,
+            uid: uuid(),
+            name: `BMW ${i}`,
             quantityLeft: Math.floor(Math.random() * 1000) + 1,
             description: `A nice BMW ${i} with a nice unique description`,
             imagePath: `test${Math.floor(Math.random() * 3) + 1}.webp`,
