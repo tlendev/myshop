@@ -30,15 +30,16 @@ const ListItem = ({ item }: Props) => {
                 <p>{item.priceInPLN} PLN</p>
                 <div
                     className='item__button'
-                    onClick={(e) => {
+                    onClick={(e) =>
                         dispatch(
                             addToCart({
                                 uid: item.uid,
                                 name: item.name,
                                 priceInPLN: item.priceInPLN,
+                                quantity: 1,
                             })
-                        );
-                    }}
+                        )
+                    }
                 >
                     <img src={AddIcon} alt='buy now' width='30' height='30' />
                     <p>Add to cart</p>

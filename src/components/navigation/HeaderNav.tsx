@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
-import { useAppSelector } from '../../redux/hooks';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import './headerNav.css';
 import Logo from '../../static/logo.svg';
 import Cart from '../../static/shopping-cart.svg';
+import { toggleCartVisibility } from '../cart/cartSlice';
 
 type Props = {};
 
 const HeaderNav = (props: Props) => {
+    const dispatch = useAppDispatch();
     const itemCount = useAppSelector((state) => state.cart.displayCount);
     const [isCartEmpty, setIsCartEmpty] = useState(true);
     useEffect(() => {
@@ -30,7 +32,12 @@ const HeaderNav = (props: Props) => {
                 <p className='nav__font'>E-SHOP</p>
             </div>
             <div className='nav__cell'>
-                <div className='nav__cart'>
+                <div
+                    className='nav__cart'
+                    onClick={(e) =>
+                        dispatch(toggleCartVisibility({ show: true }))
+                    }
+                >
                     <p>{itemCount}</p>
                     <img
                         style={

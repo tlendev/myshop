@@ -16,6 +16,6 @@ const shopItemsSlice = createSlice({
     reducers: {},
 });
 
-export const {} = shopItemsSlice.actions;
+// export const {} = shopItemsSlice.actions;
 
 export default shopItemsSlice.reducer;

@@ -2,6 +2,7 @@ export interface Item {
     uid: string;
     name: string;
     priceInPLN: number;
+    quantity: number;
 }
 
 export interface DetailedItem {

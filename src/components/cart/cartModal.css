@@ -1,0 +1,35 @@
+.container.cart__container {
+    position: fixed;
+    width: 60%;
+    height: 85%;
+    inset: 50%;
+    background-color: rgb(219, 219, 219);
+    box-shadow: 0 0 20px #000;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+    justify-content: flex-start;
+}
+
+.container.cart__item {
+    width: 98%;
+    background-color: rgb(202, 202, 202);
+    margin: 10px 0;
+    border-radius: 5px;
+    flex-flow: row nowrap;
+}
+
+.quantity_controls {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.cart__cell {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart__cell p {
+    margin: 20px 10px;
+}
