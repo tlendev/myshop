@@ -1,0 +1,11 @@
+.container.list_item {
+    width: 50%;
+    border: 1px solid rgb(199, 199, 199);
+    margin: 10px 0;
+    border-radius: 5px;
+    flex-flow: row nowrap;
+}
+
+.item__cell {
+    flex: 1;
+}

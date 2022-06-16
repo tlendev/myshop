@@ -7,12 +7,8 @@ export interface CartState {
 }
 
 const initialState = {
-    cartItems: [
-        { uid: '1', name: 'test 1', price: '100 zł', imagePath: 'test.webp' },
-        { uid: '2', name: 'test 2', price: '200 zł', imagePath: 'test2.webp' },
-        { uid: '3', name: 'test 3', price: '300 zł', imagePath: 'test3.webp' },
-    ],
-    displayCount: 3,
+    cartItems: [],
+    displayCount: 0,
 } as CartState;
 
 const cartSlice = createSlice({

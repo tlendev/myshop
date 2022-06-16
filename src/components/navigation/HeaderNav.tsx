@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../redux/hooks';
 import './headerNav.css';
-import Logo from './logo.svg';
-import Cart from './shopping-cart.svg';
+import Logo from '../../static/logo.svg';
+import Cart from '../../static/shopping-cart.svg';
 
 type Props = {};
 

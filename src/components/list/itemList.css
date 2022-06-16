@@ -1,0 +1,25 @@
+.list__container {
+    margin-top: 50px;
+    min-height: calc(100vh - 50px);
+    justify-content: flex-start;
+}
+
+.container.list__controls {
+    flex-flow: row nowrap;
+}
+
+.list__controls p {
+    margin: 20px;
+}
+
+.item__button {
+    background-color: #b3ffa5;
+    user-select: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}

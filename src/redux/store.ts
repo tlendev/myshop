@@ -1,11 +1,13 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import cartReducer from '../components/cart/cartSlice';
-import shopItemsSlice from '../components/list/shopItemsSlice';
+import shopItemsReducer from '../components/list/shopItemsSlice';
+import pagingReducer from '../components/list/pagingSlice';
 
 export const store = configureStore({
     reducer: {
         cart: cartReducer,
-        shop: shopItemsSlice
+        shop: shopItemsReducer,
+        paging: pagingReducer,
     },
 });
 

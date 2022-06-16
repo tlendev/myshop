@@ -1,14 +1,14 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { DetailedItem } from '../../types';
+import { generateMock } from '../../util/generateList';
+
 export interface ShopItemsState {
-    shopItems: Array<Item>;
+    shopItems: Array<DetailedItem>;
 }
 
 const initialState = {
-    shopItems: [
-        { uid: '1', name: 'test 1', price: '100 zł', imagePath: 'test.webp' },
-        { uid: '2', name: 'test 2', price: '200 zł', imagePath: 'test2.webp' },
-        { uid: '3', name: 'test 3', price: '300 zł', imagePath: 'test3.webp' },
-    ],
-} as ItemsState;
+    shopItems: generateMock(34),
+} as ShopItemsState;
 
 const shopItemsSlice = createSlice({
     name: 'shopItems',
@@ -16,6 +16,6 @@ const shopItemsSlice = createSlice({
     reducers: {},
 });
 
-export const {} = cartSlice.actions;
+export const {} = shopItemsSlice.actions;
 
-export default cartSlice.reducer;
+export default shopItemsSlice.reducer;

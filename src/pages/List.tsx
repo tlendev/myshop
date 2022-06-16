@@ -1,17 +1,20 @@
 import { ItemList } from '../components/list/ItemList';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
+import { useAppSelector } from '../redux/hooks';
 
 type Props = {};
 
 const List = (props: Props) => {
     const shopListItems = useAppSelector((state) => state.shop.shopItems);
+    const { page, maxPage } = useAppSelector((state) => state.paging);
     return (
-        <>
-            <br />
-            <br />
-            <p>List</p>
-            <ItemList items={shopListItems} />
-        </>
+        <section className='container'>
+            <ItemList
+                items={shopListItems.slice(
+                    (page - 1) * maxPage!,
+                    page * maxPage!
+                )}
+            />
+        </section>
     );
 };
 

@@ -1,9 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { HeaderNav } from './components/navigation/HeaderNav';
 import { Detailed } from './pages/Detailed';
 import { List } from './pages/List';
 import { NotFound } from './pages/NotFound';
-import './styles/app.css';
 
 function App() {
     return (
