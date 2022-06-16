@@ -24,7 +24,7 @@ const Detailed = (props: Props) => {
             navigate('/*');
         }
         setCurrentItem(shopItems.find((item) => item.uid === params.id));
-    });
+    }, []);
 
     return (
         <section className='container'>
