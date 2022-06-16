@@ -29,8 +29,8 @@ const cartSlice = createSlice({
             let dupe = false;
             state.cartItems.forEach((item, idx) => {
                 if (item.uid === action.payload.uid) {
-                    state.cartItems[idx].quantity += 1;
-                    state.displayCount += 1;
+                    state.cartItems[idx].quantity += action.payload.quantity;
+                    state.displayCount += action.payload.quantity;
                     state.totalPrice! += item.priceInPLN;
                     dupe = true;
                 }
@@ -60,7 +60,7 @@ const cartSlice = createSlice({
             const idx = state.cartItems.findIndex((item) => {
                 return item.uid === action.payload.uid;
             });
-            if (idx === -1 || idx === NaN) {
+            if (idx === -1 || isNaN(idx)) {
                 return;
             }
             state.cartItems[idx].quantity = action.payload.quantity;
