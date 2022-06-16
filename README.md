@@ -8,6 +8,12 @@
 -   Typescript
 -   React Helmet
 
+## Installation
+
+Install dependencies
+
+`yarn` or with npm `npm install`
+
 ## Available Scripts
 
 ### `yarn start`
