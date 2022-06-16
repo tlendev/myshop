@@ -15,3 +15,17 @@ body {
     justify-content: center;
     width: 100%;
 }
+
+section.container {
+    margin-top: 50px;
+}
+
+.img__container {
+    width: auto;
+    display: inline-block;
+}
+
+.img__container img {
+    width: 500px; /* Will shrink image to 30% of its original width */
+    height: auto;
+}

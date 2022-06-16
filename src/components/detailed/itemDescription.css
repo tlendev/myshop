@@ -1,0 +1,10 @@
+.container.description__container {
+    flex-flow: row nowrap;
+    border: 1px solid rgb(199, 199, 199);
+    width: 90%;
+    margin: 50px 0;
+}
+
+.detailed__cell {
+    flex: 1;
+}
