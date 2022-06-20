@@ -1,13 +1,8 @@
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { Item } from '../../types';
-import {
-    clearCart,
-    removeFromCart,
-    setItemQuantity,
-    toggleCartVisibility,
-} from './cartSlice';
+import { clearCart, toggleCartVisibility } from './cartSlice';
 import './cartModal.css';
-import { CartItem } from './CartItem';
+import CartItem from './CartItem';
 
 type Props = {
     cartItems: Array<Item>;
