@@ -1,13 +1,23 @@
 import { Component } from 'react';
-import { DetailedItem } from '../../types';
+import { DetailedItem, Item } from '../../types';
 import { addToCart } from '../cart/cartSlice';
-import { connect } from 'react-redux';
+import { connect, ConnectedProps } from 'react-redux';
 import './itemDescription.css';
+import { RootState } from '../../redux/store';
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
 
-type Props = {
+const mapStateToProps = (state: RootState) => ({});
+
+const mapDispatchToProps = { addToCart };
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+interface Props extends PropsFromRedux {
     item: DetailedItem;
-    addToCart?: any;
-};
+    addToCart: ActionCreatorWithPayload<Item, string>;
+}
 
 type State = {
     selectedQuantity: number;
@@ -65,8 +75,4 @@ class ItemDescription extends Component<Props, State> {
     }
 }
 
-const mapStateToProps = (state: any) => ({});
-
-const mapDispatchToProps = { addToCart };
-
-export default connect(mapStateToProps, mapDispatchToProps)(ItemDescription);
+export default connector(ItemDescription);

@@ -1,22 +1,33 @@
-import { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { connect, ConnectedProps } from 'react-redux';
 import { Link, useParams, Navigate, Params } from 'react-router-dom';
 import ItemDescription from '../components/detailed/ItemDescription';
 import { DetailedItem } from '../types';
+import { RootState } from '../redux/store';
 
-type Props = {
+const mapStateToProps = (state: RootState) => ({
+    shopItems: state.shop.shopItems,
+});
+
+const mapDispatchToProps = {};
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+interface Props extends PropsFromRedux {
     params?: Params<string>;
-    shopItems?: Array<DetailedItem>;
-};
+    shopItems: Array<DetailedItem>;
+}
 
 type State = {
     redirect: boolean;
     currentItem: DetailedItem | undefined;
 };
 
-function withParams(Component: any) {
-    return (props: Props) => <Component {...props} params={useParams()} />;
-}
+const withParams = (Component: React.ComponentType) => {
+    return (props: any) => <Component {...props} params={useParams()} />;
+};
 
 class Detailed extends Component<Props, State> {
     constructor(props: Props) {
@@ -65,15 +76,4 @@ class Detailed extends Component<Props, State> {
     }
 }
 
-const mapStateToProps = (state: any) => ({
-    shopItems: state.shop.shopItems,
-});
-
-const mapDispatchToProps = {};
-
-const DetailedWithRedux = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Detailed);
-
-export default withParams(DetailedWithRedux);
+export default withParams(connector(Detailed));
